@@ -20,6 +20,12 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo " Synthea CSV Loader → PostgreSQL"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
+# ── Create healthcare database if it doesn't exist ───────
+echo ""
+echo "▶ Creating healthcare database if needed..."
+docker exec -i postgres psql -U "$USER" -d postgres -c "SELECT 1 FROM pg_database WHERE datname='healthcare'" | grep -q 1 ||   docker exec -i postgres psql -U "$USER" -d postgres -c "CREATE DATABASE healthcare;"
+echo "  ✓ Done"
+
 # ── Helper: load a CSV into a table ──────────────────────
 load_csv() {
   local table=$1

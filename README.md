@@ -99,6 +99,8 @@ The first run will build the custom SQL Server image (installs `sqlcmd`) — thi
 bash load_synthea.sh
 ```
 
+> The script automatically creates the `healthcare` database if it doesn't exist — no manual setup needed.
+
 Creates and populates 18 tables in a `healthcare` database:
 
 | Table | Description |

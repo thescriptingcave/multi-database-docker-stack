@@ -1,0 +1,13 @@
+# Environment variables - never commit this
+.env
+
+# Mac junk
+.DS_Store
+
+# Docker volumes (if ever exported locally)
+postgres_data/
+mongo_data/
+sqlserver_data/
+
+# Backup files (too large for git)
+backups/

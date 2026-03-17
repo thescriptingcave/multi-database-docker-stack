@@ -11,3 +11,5 @@ sqlserver_data/
 
 # Backup files (too large for git)
 backups/
+backups.zip
+*.zip
